@@ -18,9 +18,9 @@
 $.fn.extend({
 	titleActsAsHint: function(){
 		var hintClass = "hint";
-		$(this).each(function(i,el){
+		$(this).filter("input:text, textarea").each(function(i,el){
 			el = $(el);
-			if(!el.is("input:text, textarea") || !el.attr("title") || el.attr("title") == ""){
+			if(!el.attr("title") || el.attr("title") == ""){
 				return;
 			}
 			el.focus(function(){
